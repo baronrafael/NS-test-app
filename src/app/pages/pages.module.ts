@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NativeScriptCommonModule } from "nativescript-angular/common";
 
 import { PagesRoutingModule } from './pages-routing.module';
 
@@ -15,6 +16,7 @@ const PAGES_COMPONENTS = [
     ...PAGES_COMPONENTS,
   ],
   imports: [
+    NativeScriptCommonModule,
     PagesRoutingModule
   ]
 })
