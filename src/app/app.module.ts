@@ -8,7 +8,7 @@ import { AppComponent } from "./app.component";
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
-// import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
+import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 
 @NgModule({
     bootstrap: [
@@ -16,6 +16,7 @@ import { AppComponent } from "./app.component";
     ],
     imports: [
         NativeScriptModule,
+        NativeScriptHttpClientModule,
         AppRoutingModule
     ],
     declarations: [
