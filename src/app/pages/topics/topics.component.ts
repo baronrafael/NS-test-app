@@ -21,6 +21,7 @@ export class TopicsComponent implements OnInit {
   public selectedIndex = 0;
 
   constructor(private page: Page, private pagesService: PagesService) {
+    this.getFakeData(); 
     this.weekDays = [];
     this.initialDays = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
@@ -34,8 +35,7 @@ export class TopicsComponent implements OnInit {
   ngOnInit() {
     //this.page.actionBarHidden = true;
     //this.getWeekdays();
-    this.getFakeData();
-    console.log(this.days.weekdays[2].dayName);
+    console.log(this.days[2].topics)
   }
 
   public onSelectedIndexChange(args) {
@@ -62,8 +62,7 @@ export class TopicsComponent implements OnInit {
   }
 
   getFakeData(){
-    this.days = {
-      "weekdays": [
+    this.days = [
         { 
           "id": 0, 
           "dayName": "Lunes", 
@@ -81,14 +80,14 @@ export class TopicsComponent implements OnInit {
                { 
                 "start":[  
                       {  
-                         "hour": 8,
-                         "minutes": 0
+                         "hour": "8",
+                         "minutes": "00"
                       }
                   ],
                  "end":[  
                       {  
-                         "hour": 9,
-                         "minutes": 0
+                         "hour": "9",
+                         "minutes": "00"
                       }
                   ],
                 "subject": "Matemática",
@@ -103,14 +102,14 @@ export class TopicsComponent implements OnInit {
               { 
                 "start":[  
                       {  
-                         "hour": 9,
-                         "minutes": 15
+                         "hour": "9",
+                         "minutes": "15"
                       }
                   ],
                  "end":[  
                       {  
-                         "hour": 10,
-                         "minutes": 15
+                         "hour": "10",
+                         "minutes": "15"
                       }
                   ],
                 "subject": "Castellano",
@@ -125,14 +124,14 @@ export class TopicsComponent implements OnInit {
               { 
                 "start":[  
                       {  
-                         "hour": 10,
-                         "minutes": 15
+                         "hour": "10",
+                         "minutes": "15"
                       }
                   ],
                  "end":[  
                       {  
-                         "hour": 11,
-                         "minutes": 15
+                         "hour": "11",
+                         "minutes": "15"
                       }
                   ],
                 "subject": "Historia",
@@ -147,14 +146,14 @@ export class TopicsComponent implements OnInit {
               { 
                 "start":[  
                       {  
-                         "hour": 11,
-                         "minutes": 30
+                         "hour": "11",
+                         "minutes": "30"
                       }
                   ],
                  "end":[  
                       {  
-                         "hour": 12,
-                         "minutes": 30
+                         "hour": "12",
+                         "minutes": "30"
                       }
                   ],
                 "subject": "Computación",
@@ -192,8 +191,6 @@ export class TopicsComponent implements OnInit {
           "dayName": "Domingo", 
           "topics":[]
         }
-      ]
-    }
+    ]
   }
-
 }

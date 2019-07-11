@@ -2,37 +2,107 @@
         <ActionBar title="Agenda Completa"></ActionBar>
         <SegmentedBar [items]="weekDays" (selectedIndexChange)="onSelectedIndexChange($event)" class="m-5" ></SegmentedBar>
         <GridLayout [visibility]="selectedIndex === 0 ? 'visible' : 'collapsed'" backgroundColor="white">
-            <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center"></Label>
-        </GridLayout>
-        
-        <GridLayout rows="*" [visibility]="selectedIndex === 1 ? 'visible' : 'collapsed'" backgroundColor="green">
-            <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label>
-        </GridLayout>
-        
-        <GridLayout rows="*" [visibility]="selectedIndex === 2 ? 'visible' : 'collapsed'" backgroundColor="white">
-            <ListView [items]="this.days.weekdays[2]" (itemTap)="onItemTap($event)" class="list-group">
-                <ng-template let-country="item" let-i="index" let-odd="odd" let-even="even">
-                    <StackLayout orientation="horizontal" class="list-group-item">
-                        <Label text="Country: " textWrap="true"></Label>
-                        <Label [text]="country.dayName"></Label>
+            <Label *ngIf="days[0].topics.length == 0" class="h3 p-15" text="No hay clases disponibles para este dia" textWrap="true"></Label>
+            <ListView *ngIf="days[0].topics" [items]="days[0].topics" class="list-group">
+                <ng-template let-item="item">
+                    <StackLayout class="list-group-item">
+                        <Label [text]="item.subject" class="list-group-item-heading"></Label>
+                        <Label [text]='item.start[0].hour + ":" + item.start[0].minutes + "  -  " + item.end[0].hour + ":" + item.end[0].minutes' class="list-group-item-text" textWrap="true"></Label>
+                        <StackLayout *ngFor="let teacher of item.teachers" class="list-group-item-text">
+                            <Label [text]='"Profesor/a: " + item.teachers[0].name'></Label>
+                        </StackLayout>
                     </StackLayout>
                 </ng-template>
             </ListView>
         </GridLayout>
         
-        <GridLayout rows="*" [visibility]="selectedIndex === 3 ? 'visible' : 'collapsed'" backgroundColor="blue">
-            <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label>
+        <GridLayout rows="*" [visibility]="selectedIndex === 1 ? 'visible' : 'collapsed'" backgroundColor="white">
+            <Label *ngIf="days[1].topics.length == 0" class="h3 p-15" text="No hay clases disponibles para este dia" textWrap="true"></Label>
+            <ListView *ngIf="days[1].topics" [items]="days[1].topics" class="list-group">
+                <ng-template let-item="item">
+                    <StackLayout class="list-group-item">
+                        <Label [text]="item.subject" class="list-group-item-heading"></Label>
+                        <Label [text]='item.start[0].hour + ":" + item.start[0].minutes + "  -  " + item.end[0].hour + ":" + item.end[0].minutes' class="list-group-item-text" textWrap="true"></Label>
+                        <StackLayout *ngFor="let teacher of item.teachers" class="list-group-item-text">
+                            <Label [text]='"Profesor/a: " + item.teachers[0].name'></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </ng-template>
+            </ListView>
         </GridLayout>
         
-        <GridLayout rows="*" [visibility]="selectedIndex === 4 ? 'visible' : 'collapsed'" backgroundColor="orange">
-            <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label>
+        <GridLayout rows="*" [visibility]="selectedIndex === 2 ? 'visible' : 'collapsed'" backgroundColor="white">
+            <Label *ngIf="days[2].topics.length == 0" class="h3 p-15" text="No hay clases disponibles para este dia" textWrap="true"></Label>
+            <ListView *ngIf="days[2].topics" [items]="days[2].topics" class="list-group">
+                <ng-template let-item="item">
+                    <StackLayout class="list-group-item">
+                        <Label [text]="item.subject" class="list-group-item-heading"></Label>
+                        <Label [text]='item.start[0].hour + ":" + item.start[0].minutes + "  -  " + item.end[0].hour + ":" + item.end[0].minutes' class="list-group-item-text" textWrap="true"></Label>
+                        <StackLayout *ngFor="let teacher of item.teachers" class="list-group-item-text">
+                            <Label [text]='"Profesor/a: " + item.teachers[0].name'></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </ng-template>
+            </ListView>
         </GridLayout>
         
-        <GridLayout rows="*" [visibility]="selectedIndex === 5 ? 'visible' : 'collapsed'" backgroundColor="yellow">
-            <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label>
+        <GridLayout rows="*" [visibility]="selectedIndex === 3 ? 'visible' : 'collapsed'" backgroundColor="white">
+            <Label *ngIf="days[3].topics.length == 0" class="h3 p-15" text="No hay clases disponibles para este dia" textWrap="true"></Label>
+            <ListView *ngIf="days[3].topics" [items]="days[3].topics" class="list-group">
+                <ng-template let-item="item">
+                    <StackLayout class="list-group-item">
+                        <Label [text]="item.subject" class="list-group-item-heading"></Label>
+                        <Label [text]='item.start[0].hour + ":" + item.start[0].minutes + "  -  " + item.end[0].hour + ":" + item.end[0].minutes' class="list-group-item-text" textWrap="true"></Label>
+                        <StackLayout *ngFor="let teacher of item.teachers" class="list-group-item-text">
+                            <Label [text]='"Profesor/a: " + item.teachers[0].name'></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </ng-template>
+            </ListView>
         </GridLayout>
         
-        <GridLayout rows="*" [visibility]="selectedIndex === 6 ? 'visible' : 'collapsed'" backgroundColor="purple">
-            <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label>
+        <GridLayout rows="*" [visibility]="selectedIndex === 4 ? 'visible' : 'collapsed'" backgroundColor="white">
+            <Label *ngIf="days[4].topics.length == 0" class="h3 p-15" text="No hay clases disponibles para este dia" textWrap="true"></Label>
+            <ListView *ngIf="days[4].topics" [items]="days[4].topics" class="list-group">
+                <ng-template let-item="item">
+                    <StackLayout class="list-group-item">
+                        <Label [text]="item.subject" class="list-group-item-heading"></Label>
+                        <Label [text]='item.start[0].hour + ":" + item.start[0].minutes + "  -  " + item.end[0].hour + ":" + item.end[0].minutes' class="list-group-item-text" textWrap="true"></Label>
+                        <StackLayout *ngFor="let teacher of item.teachers" class="list-group-item-text">
+                            <Label [text]='"Profesor/a: " + item.teachers[0].name'></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </ng-template>
+            </ListView>
+        </GridLayout>
+        
+        <GridLayout rows="*" [visibility]="selectedIndex === 5 ? 'visible' : 'collapsed'" backgroundColor="white">
+            <Label *ngIf="days[5].topics.length == 0" class="h3 p-15" text="No hay clases disponibles para este dia" textWrap="true"></Label>
+            <ListView *ngIf="days[5].topics" [items]="days[5].topics" class="list-group">
+                <ng-template let-item="item">
+                    <StackLayout class="list-group-item">
+                        <Label [text]="item.subject" class="list-group-item-heading"></Label>
+                        <Label [text]='item.start[0].hour + ":" + item.start[0].minutes + "  -  " + item.end[0].hour + ":" + item.end[0].minutes' class="list-group-item-text" textWrap="true"></Label>
+                        <StackLayout *ngFor="let teacher of item.teachers" class="list-group-item-text">
+                            <Label [text]='"Profesor/a: " + item.teachers[0].name'></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </ng-template>
+            </ListView>
+        </GridLayout>
+        
+        <GridLayout rows="*" [visibility]="selectedIndex === 6 ? 'visible' : 'collapsed'" backgroundColor="white">
+            <Label *ngIf="days[6].topics.length == 0" class="h3 p-15" text="No hay clases disponibles para este dia" textWrap="true"></Label>    
+            <ListView *ngIf="days[6].topics" [items]="days[6].topics" class="list-group">
+                <ng-template let-item="item">
+                    <StackLayout class="list-group-item">
+                        <Label [text]="item.subject" class="list-group-item-heading"></Label>
+                        <Label [text]='item.start[0].hour + ":" + item.start[0].minutes + "  -  " + item.end[0].hour + ":" + item.end[0].minutes' class="list-group-item-text" textWrap="true"></Label>
+                        <StackLayout *ngFor="let teacher of item.teachers" class="list-group-item-text">
+                            <Label [text]='"Profesor/a: " + item.teachers[0].name'></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </ng-template>
+            </ListView>
         </GridLayout>
 </StackLayout>
