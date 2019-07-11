@@ -10,3 +10,26 @@ of writing your own CSS rules. For a full list of class names in the theme
 refer to http://docs.nativescript.org/ui/theme.
 */
 @import '~nativescript-theme-core/css/core.light.css';
+
+ActionBar, SegmentedBar{
+    background-color: rgb(92, 212, 128);
+    color: white;
+}
+
+.list-group-item-heading{
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.list-group-item-text{
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.list-text{
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+}
+
+
