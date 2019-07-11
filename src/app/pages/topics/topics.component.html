@@ -9,8 +9,15 @@
             <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label>
         </GridLayout>
         
-        <GridLayout rows="*" [visibility]="selectedIndex === 2 ? 'visible' : 'collapsed'" backgroundColor="red">
-            <Label [text]="'The new selectedIndex is: ' + selectedIndex" class="m-15 h3 p-5 text-center" color="white"></Label>
+        <GridLayout rows="*" [visibility]="selectedIndex === 2 ? 'visible' : 'collapsed'" backgroundColor="white">
+            <ListView [items]="this.days.weekdays[2]" (itemTap)="onItemTap($event)" class="list-group">
+                <ng-template let-country="item" let-i="index" let-odd="odd" let-even="even">
+                    <StackLayout orientation="horizontal" class="list-group-item">
+                        <Label text="Country: " textWrap="true"></Label>
+                        <Label [text]="country.dayName"></Label>
+                    </StackLayout>
+                </ng-template>
+            </ListView>
         </GridLayout>
         
         <GridLayout rows="*" [visibility]="selectedIndex === 3 ? 'visible' : 'collapsed'" backgroundColor="blue">
