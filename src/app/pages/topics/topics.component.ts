@@ -64,7 +64,7 @@ export class TopicsComponent implements OnInit {
         this.days = res;
       },
       err => {
-        //console.log(err);
+        console.log(err);
       }
     );
   }

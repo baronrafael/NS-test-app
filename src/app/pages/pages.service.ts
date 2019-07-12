@@ -3,9 +3,9 @@ import { HttpClient } from "@angular/common/http";
 
 const API_URL = 'https://nexedu-timetable.free.beeceptor.com/';
 
-const JSON_SERVER_URL = 'http://localhost:3000/';
+//const JSON_SERVER_URL = 'http://localhost:3000/';
 
-const ENDPOINT_NAME = 'weekdays/';
+//const ENDPOINT_NAME = 'weekdays/';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class PagesService {
     return this.http.get(API_URL);
   }
 
-  getSpecificDay(day: number){
+  /*getSpecificDay(day: number){
     return this.http.get(JSON_SERVER_URL+ENDPOINT_NAME+day);
-  }
+  }*/
 }
