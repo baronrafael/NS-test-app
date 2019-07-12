@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy  } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { Page } from "tns-core-modules/ui/page";
 import { SegmentedBar, SegmentedBarItem } from "tns-core-modules/ui/segmented-bar";
 
@@ -20,7 +20,13 @@ export class TopicsComponent implements OnInit {
 
   public selectedIndex = 0;
 
-  constructor(private page: Page, private pagesService: PagesService) {
+  constructor(
+    private page: Page, 
+    private router: Router,
+    private pagesService: PagesService
+  ) 
+  
+  {
     this.getFakeData(); 
 
     this.weekDays = [];
@@ -44,17 +50,21 @@ export class TopicsComponent implements OnInit {
   }
 
   public onItemTap(args) {
-    console.log("Item Tapped at cell index: " + args.index);
+    //console.log("Item Tapped at cell index: " + args.index);
+    this.pagesService.storage = this.days[this.selectedIndex].topics[args.index];
+    //console.log(this.pagesService.storage);
+    this.router.navigate(["pages/topics-details"]);
   }
 
   getWeekdays(){
     this.pagesService.getWeekdays()
     .subscribe(
       res => {
-        console.log(res);
+        //console.log(res);
+        this.days = res;
       },
       err => {
-        console.log(err);
+        //console.log(err);
       }
     );
   }

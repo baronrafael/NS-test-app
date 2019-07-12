@@ -1,1 +1,22 @@
-<Button text="topics-details works!" class="btn btn-primary"></Button>
+<StackLayout>
+    <ActionBar [title]="subject.subject"></ActionBar>
+    <!--<StackLayout *ngFor="let teacher of subject.teachers">
+        <Image [src]="teacher.avatar" stretch="aspectFit" class="img-rounded"></Image>
+        <Label class="h3 p-15 list-text" [text]="teacher.name" textWrap="true"></Label>
+    </StackLayout>-->
+    <GridLayout rows="auto,*,auto" columns="*,*,*">
+        <ListView margin="5" [items]="subject.teachers" separatorColor="#676767" row="1" colSpan="3">
+            <ng-template let-item="item" let-i="index">
+                <StackLayout orientation="horizontal" class="item-container">
+                    <Image [src]="item.avatar" class="group-image avatar-rounded" horizontalAlignment="left"
+                        verticalAlignment="center" height="72" width="72">
+                    </Image>
+                    <Label class="avatar-title" [text]="item.name" verticalAlignment="center" horizontalAlignment="right"
+                        style="padding-left: 25%">
+                    </Label>
+                </StackLayout>
+            </ng-template>
+        </ListView>
+    </GridLayout>
+
+</StackLayout>

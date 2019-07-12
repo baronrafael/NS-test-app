@@ -1,9 +1,9 @@
 <StackLayout>
         <ActionBar title="Agenda Completa"></ActionBar>
-        <SegmentedBar [items]="weekDays" (selectedIndexChange)="onSelectedIndexChange($event)" class="m-5" ></SegmentedBar>
+        <SegmentedBar *ngIf="days" [items]="weekDays" (selectedIndexChange)="onSelectedIndexChange($event)" class="m-5" ></SegmentedBar>
         <GridLayout [visibility]="selectedIndex === 0 ? 'visible' : 'collapsed'" backgroundColor="white">
             <Label *ngIf="days[0].topics.length == 0" class="h3 p-15 list-text" text="No hay clases disponibles para este dia" textWrap="true"></Label>
-            <ListView *ngIf="days[0].topics" [items]="days[0].topics" class="list-group">
+            <ListView *ngIf="days[0].topics" [items]="days[0].topics" class="list-group" (itemTap)="onItemTap($event)">
                 <ng-template let-item="item">
                     <StackLayout class="list-group-item">
                         <Label [text]="item.subject" class="list-group-item-heading"></Label>
@@ -15,7 +15,7 @@
         
         <GridLayout rows="*" [visibility]="selectedIndex === 1 ? 'visible' : 'collapsed'" backgroundColor="white">
             <Label *ngIf="days[1].topics.length == 0" class="h3 p-15 list-text" text="No hay clases disponibles para este dia" textWrap="true"></Label>
-            <ListView *ngIf="days[1].topics" [items]="days[1].topics" class="list-group">
+            <ListView *ngIf="days[1].topics" [items]="days[1].topics" class="list-group" (itemTap)="onItemTap($event)">
                 <ng-template let-item="item">
                     <StackLayout class="list-group-item">
                         <Label [text]="item.subject" class="list-group-item-heading"></Label>
@@ -27,7 +27,7 @@
         
         <GridLayout rows="*" [visibility]="selectedIndex === 2 ? 'visible' : 'collapsed'" backgroundColor="white">
             <Label *ngIf="days[2].topics.length == 0" class="h3 p-15 list-text" text="No hay clases disponibles para este dia" textWrap="true"></Label>
-            <ListView *ngIf="days[2].topics" [items]="days[2].topics" class="list-group">
+            <ListView *ngIf="days[2].topics" [items]="days[2].topics" class="list-group" (itemTap)="onItemTap($event)">
                 <ng-template let-item="item">
                     <StackLayout class="list-group-item">
                         <Label [text]="item.subject" class="list-group-item-heading"></Label>
@@ -39,7 +39,7 @@
         
         <GridLayout rows="*" [visibility]="selectedIndex === 3 ? 'visible' : 'collapsed'" backgroundColor="white">
             <Label *ngIf="days[3].topics.length == 0" class="h3 p-15 list-text" text="No hay clases disponibles para este dia" textWrap="true"></Label>
-            <ListView *ngIf="days[3].topics" [items]="days[3].topics" class="list-group">
+            <ListView *ngIf="days[3].topics" [items]="days[3].topics" class="list-group" (itemTap)="onItemTap($event)">
                 <ng-template let-item="item">
                     <StackLayout class="list-group-item">
                         <Label [text]="item.subject" class="list-group-item-heading"></Label>
@@ -51,7 +51,7 @@
         
         <GridLayout rows="*" [visibility]="selectedIndex === 4 ? 'visible' : 'collapsed'" backgroundColor="white">
             <Label *ngIf="days[4].topics.length == 0" class="h3 p-15 list-text" text="No hay clases disponibles para este dia" textWrap="true"></Label>
-            <ListView *ngIf="days[4].topics" [items]="days[4].topics" class="list-group">
+            <ListView *ngIf="days[4].topics" [items]="days[4].topics" class="list-group" (itemTap)="onItemTap($event)">
                 <ng-template let-item="item">
                     <StackLayout class="list-group-item">
                         <Label [text]="item.subject" class="list-group-item-heading"></Label>
@@ -63,7 +63,7 @@
         
         <GridLayout rows="*" [visibility]="selectedIndex === 5 ? 'visible' : 'collapsed'" backgroundColor="white">
             <Label *ngIf="days[5].topics.length == 0" class="h3 p-15 list-text" text="No hay clases disponibles para este dia" textWrap="true"></Label>
-            <ListView *ngIf="days[5].topics" [items]="days[5].topics" class="list-group">
+            <ListView *ngIf="days[5].topics" [items]="days[5].topics" class="list-group" (itemTap)="onItemTap($event)">
                 <ng-template let-item="item">
                     <StackLayout class="list-group-item">
                         <Label [text]="item.subject" class="list-group-item-heading"></Label>
@@ -74,7 +74,7 @@
         
         <GridLayout rows="*" [visibility]="selectedIndex === 6 ? 'visible' : 'collapsed'" backgroundColor="white">
             <Label *ngIf="days[6].topics.length == 0" class="h3 p-15 list-text" text="No hay clases disponibles para este dia" textWrap="true"></Label>    
-            <ListView *ngIf="days[6].topics" [items]="days[6].topics" class="list-group">
+            <ListView *ngIf="days[6].topics" [items]="days[6].topics" class="list-group" (itemTap)="onItemTap($event)">
                 <ng-template let-item="item">
                     <StackLayout class="list-group-item">
                         <Label [text]="item.subject" class="list-group-item-heading"></Label>

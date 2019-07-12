@@ -19,6 +19,7 @@ ActionBar, SegmentedBar{
 .list-group-item-heading{
     font-weight: 800;
     font-size: 20px;
+    color: black;
 }
 
 .list-group-item-text{
@@ -30,6 +31,35 @@ ActionBar, SegmentedBar{
     font-weight: 600;
     font-size: 22px;
     text-align: center;
+}
+
+.img-rounded{
+    margin-top: 50px;
+    width: 300px;
+    height: 300px;
+    border-radius: 200px;
+    border-width: 5px;
+    align-self: center;
+}
+
+.avatar-rounded{
+    border-radius: 200px;
+    border-width: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+    align-self: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.avatar-title{
+    font-weight: 800;
+    font-size: 24px;
+    font-stretch: expanded;
+    color: black;
 }
 
 

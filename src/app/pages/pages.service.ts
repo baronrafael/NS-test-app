@@ -12,10 +12,12 @@ const ENDPOINT_NAME = 'weekdays/';
 })
 export class PagesService {
 
+  public storage: any;
+
   constructor(private http: HttpClient) { }
 
   getWeekdays(){
-    return this.http.get(JSON_SERVER_URL+ENDPOINT_NAME);
+    return this.http.get(API_URL);
   }
 
   getSpecificDay(day: number){
